@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f6ff;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #6c63ff, #857dff);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  background: rgba(255,255,255,0.25);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+}
+
+/* BOTONES */
+.filters {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.filters button {
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.6rem 1.5rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.filters button:hover {
+  background: #574fe0;
+}
+
+/* CONTENEDOR */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+/* TARJETAS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* FOOTER */
+.team {
+  margin-top: 3rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+}
