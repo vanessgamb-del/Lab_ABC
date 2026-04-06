@@ -1,30 +1,21 @@
 * {
   box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: #f4f6ff;
+  background: #f3f6ff;
 }
 
-/* HEADER */
 .header {
   background: linear-gradient(135deg, #6c63ff, #857dff);
   color: white;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
-.badge {
-  background: rgba(255,255,255,0.25);
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-}
-
-/* BOTONES */
 .filters {
   text-align: center;
   margin: 1.5rem 0;
@@ -38,52 +29,74 @@ body {
   padding: 0.6rem 1.5rem;
   margin: 0 0.5rem;
   cursor: pointer;
-  font-size: 1rem;
 }
 
-.filters button:hover {
-  background: #574fe0;
-}
-
-/* CONTENEDOR */
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 1.5rem;
+  padding: 2rem;
 }
 
-/* TARJETAS */
+/* GRID */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1.5rem;
 }
 
+/* CARD */
 .card {
-  background: white;
-  border-radius: 20px;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  height: 180px;
+  perspective: 1000px;
   cursor: pointer;
 }
 
-.card img {
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.card-front {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #6c63ff;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-back img {
   width: 80px;
   height: 80px;
-  object-fit: contain;
+  margin-bottom: 8px;
 }
 
-.card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-}
-
-/* FOOTER */
 .team {
-  margin-top: 3rem;
   background: white;
   padding: 1.5rem;
-  border-radius: 20px;
   text-align: center;
+  margin-top: 3rem;
 }
